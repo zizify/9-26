@@ -66,14 +66,38 @@ const rocksWarning = hazardWarningCreator('Rocks on road!')
 const iceWarning = hazardWarningCreator('Ice is slippery!')
 const fireWarning = hazardWarningCreator('Forest is on Fire!')
 
-rocksWarning('Chicago');
-rocksWarning('Palm Beach');
-rocksWarning('Denver');
+// rocksWarning('Chicago');
+// rocksWarning('Palm Beach');
+// rocksWarning('Denver');
 
-iceWarning('Chicago');
-iceWarning('Palm Beach');
-iceWarning('Denver');
+// iceWarning('Chicago');
+// iceWarning('Palm Beach');
+// iceWarning('Denver');
 
-fireWarning('Chicago');
-fireWarning('Palm Beach');
-fireWarning('Denver');
+// fireWarning('Chicago');
+// fireWarning('Palm Beach');
+// fireWarning('Denver');
+
+// 4.1
+
+const movements = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+const movementsPos = movements.filter(function(movement) {
+  return movement[0] >= 0 && movement[1] >= 0;
+});
+
+console.log(movementsPos);
+
+// 4.2
+
+const movementsTotal = movements.map(function(total) {
+  return total[0] + total[1];
+});
+
+console.log(movementsTotal);
+
+// 4.3
+
+movements.forEach(function(all) {
+  console.log(all[0] + all[1]);
+});
