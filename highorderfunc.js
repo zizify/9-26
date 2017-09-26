@@ -41,4 +41,39 @@ function filter(arr, fn) {
   return newArray;
 }
 
-console.log(filteredNames); // => ['Rich', 'Ray']
+//console.log(filteredNames); // => ['Rich', 'Ray']
+
+//3
+
+function hazardWarningCreator(typeOfWarning) {
+  let warningCounter = 0;
+  return function(location){
+    warningCounter++;
+    console.log(`"DANGER! There is a ${typeOfWarning} hazard at ${location}!"`);
+    switch (warningCounter === 1){
+    case true:
+      console.log(`"The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!"`);
+      break;
+    default:
+      console.log(`"The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today!"`);
+      break;
+
+    }
+  }
+}
+
+const rocksWarning = hazardWarningCreator('Rocks on road!')
+const iceWarning = hazardWarningCreator('Ice is slippery!')
+const fireWarning = hazardWarningCreator('Forest is on Fire!')
+
+rocksWarning('Chicago');
+rocksWarning('Palm Beach');
+rocksWarning('Denver');
+
+iceWarning('Chicago');
+iceWarning('Palm Beach');
+iceWarning('Denver');
+
+fireWarning('Chicago');
+fireWarning('Palm Beach');
+fireWarning('Denver');
